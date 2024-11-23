@@ -1,0 +1,155 @@
+.logo{
+  padding:5px;
+  border:4px ridge black;
+}
+.dropdown{
+  position: relative;
+  display:inline-block;
+
+}
+.dropdown-content{
+  display:none;
+  position: absolute;
+  backgroundcolor:white;
+  min-width:160px;
+  border:1px solid black;
+  z-index:1;
+  font-family:'Trebuchet Ms';
+  font-size:20px
+}
+.dropdown-content a{ /*the a means this will apply to all links witin this area*/
+  color: red;
+  padding:12px 160px;
+  text-decoration:none; 
+  display:block;   
+  text-align:center;
+  border-top:2px dotted whitesmoke;
+}
+.dropdown-content a:hover{
+  background-color:blue;
+  transition-property:background-color;
+  transition-timing-function:linear;
+  border-top-width: 0px;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+.dropdown:hover .logo{
+  background-color: red;
+}
+
+
+
+.header1{
+  text-align: center;
+  font-family: cursive;
+  color: White;
+  background-color: blue;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+body{
+  margin: 0px;
+  background-color: white;
+}
+h2{
+  text-align: center;
+  font-family: cursive;
+  background-color: rgb(30, 195, 245);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px;
+  
+}
+
+.form{
+  border: 3px solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  font-family: cursive;
+  font-size: 25px;
+}
+.names{
+  border: 2px dashed gray;
+}
+.class{
+  border: 2px solid gray;
+}
+#button{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px ;
+  transition-property:transform;
+  transition-duration: 0.5s; /*defining 1sec transition for the mouse hover*/
+  trannsition-timing-function: ease-out; /*start growing fast and then ease to a slow grow at end*/
+}
+#button:hover{ /* this tells it what happens when they hover mouse over button*/
+  transform:scale3d(1.2,1.2,1.2); /* having it scale in all x,y,z dimensions by factor of 1.2*/
+}
+#button:active{ 
+  background-color: white; /* when clicked turn white*/
+  color: black;
+}
+.image1{
+  display:block; /* when set it as a block, you are able to move it around as you want*/
+  margin-left:auto;
+  margin-left:auto; /* this makes it dynamic, so it will be in center regardless of screen size*/
+
+}
+@keyframes slideinRight{ /*animation is diff then events because these happen once website open*/
+  from{
+    transform:translateX(1000px); /*move it positive 1000 px to right (pos is right)*/
+  }
+  to{
+    transform:translateX(0px);
+  }
+}
+.slideinRight{ /*name this whatever you want*/
+  animation-name: slideinRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+
+}
+
+/*the pulsing didnt work for me*/
+@keyframes pulsingBox{ /*key frames for animations like premeir pro*/
+  from{
+    box-shadow: 0px 0px 0px 0px gold;
+  }
+  to{
+    box-shadow: 0px,0px,10px,5px gold; /*changing blur (how intense) and spread (how big)*/
+
+  }
+}
+.pulsingBox{
+  animation-name:pulsingBox;
+  animation-duration:2s;
+  animation-timing-function:linear;
+  animation-delay:3s;
+  animation-iteration-count:infinite; /*how many times want animation to repeat*/
+}
+
+
+
+@keyframes pulsingText{ /*key frames for animations like premeir pro*/
+  from{
+    text-shadow: 0px 0px 0px gold;
+  }
+  to{
+    text-shadow: 0px 0px 10px gold; /*changing blur (how intense) and spread (how big)*/
+
+  }
+}
+.pulsingText{
+  animation-name:pulsingText;
+  animation-duration:2s;
+  animation-timing-function:linear;
+  animation-delay:3s;
+  animation-iteration-count:infinite; /*how many times want animation to repeat*/
+  animation-direction: alternate; /*tells it to go gradual high, to gradual low repeat rather gradual to high, quickly back to low */
+}
